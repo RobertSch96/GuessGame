@@ -4,33 +4,46 @@ import random
 import sys
 import _tkinter
 import streamlit as st
-print("Hello, what is your name?")
-name = input()
 
-print("Well" + name + " i am thinking of a number between 1- 20")
+st.text('Thanks for Trying!')
+st.caption('Im a noob...')
+st.title('GuessGame')
+st.header('Guess The Number')
+st.subheader('Have fun!')
+
+
+st.write("Hello, what is your name?")
+name = st.text_input(label="Your Name Here")
+
+st.write("Well " + name + " i am thinking of a number between 1- 20")
+#secretnumber = random.randint(1,20)
+st.write("Take a guess")
+
+#def ggame(a):
+
 secretnumber = random.randint(1,20)
-try:
-    for guessesTaken in range(1,7):
-        print("Take a guess")
-        guess = int(st.text_input())
-        if guess == secretnumber:
-            print("You guessed correctly!")
-            break
-        elif guess != secretnumber:
-            if guess > secretnumber:
-                print("Incorrect! Your guess was too high!")
-                print("Take another guess!")
-            elif guess < secretnumber:
-                print("Incorrect! Your guess was too low")
-                print("Take another guess!")
-except:ValueError
-print("You did not enter a number")
+lol = random.randint(1,200)
+a = st.number_input("number goes here", key=lol)
+if a > secretnumber:
+    st.write("Your number is greater than 20!")
+elif a == secretnumber:
+    st.write('You guessed correctly!')
+    st.write("The Secret Number was " +str(secretnumber))
+elif a != secretnumber:
+    if a > secretnumber:
+      st.write('Incorrect! Your guess was too high!')
+      st.write("Take another guess!")
+elif a < secretnumber:
+    st.write("Incorrect! Your guess was too low")
+    st.write("Take another guess!")
+            
+
    
 
 
 
-print("The Secret Number was " +str(secretnumber ))
-print("you took " + str(guessesTaken) + " guesses")
+#st.write("The Secret Number was " +str(secretnumber ))
+
 
     
     
